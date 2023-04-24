@@ -1,0 +1,69 @@
+Technology used in Project:
+    1: MongoDB
+    2: Node
+    3: Express
+    4: Socket io
+    5: React
+
+MUi for react component ---> for creating component in react 
+Front-End Part:
+    1: Insatall Ract for Frontend
+        code: npx create-react-app client
+
+
+Google Auth Provider provide some data like..(namw, email, picture, )
+
+Context Api ---> provides a way to send data like userid, auth, and theme data through the component tree without sending any props manually at every level.
+
+ first we create context using ---> "createContext(null)" that have value null and that stored in variable name ---> "AccountContext" 
+
+ PremKumar: 105131003078244840000
+ Prem Yadav: 104252115711306140000 
+ Mr Yadav: 110859891158519100000
+
+ 1: PY ---> PK
+ 2: PY ---> Mr
+ 3: PK ---> Mr
+ 4: PK ---> PY
+
+
+
+
+ import { Server } from "socket.io";
+
+const io = new Server(9000, {
+    cors: {
+        origin: 'http://localhost:3000'
+    }
+})
+
+// let users = [];
+// const addUser = (userData, socketId) => {
+//     !users.some(user => user.sub == userData.sub) && users.push({ ...userData, socketId});
+// }
+
+// const getUser = (userId) => {
+//     return users.find(user => user.sub === userId);
+// }
+
+io.on('Connection', (socket) => {
+    console.log('user connected')
+
+    // socket.on("addUsers", userData => {
+    //     addUser(userData, socket.id);
+    //     io.emit("getUsers", users);
+    // })
+
+    //send message
+    // socket.on('sendMessage', (data) => {
+    //     const user = getUser(data.receiverId);
+    //     io.to(user.socketId).emit('getMessage', data)
+    // })
+
+    //disconnect
+    // socket.on('disconnect', () => {
+    //     console.log('user disconnected');
+    //     removeUser(socket.id);
+    //     io.emit('getUsers', users);
+    // })
+})
